@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro ao registrar o usuário: " . $conn->error;
     }
-    
+
     // Fechar a conexão com o banco de dados
     $conn->close();
 } else {

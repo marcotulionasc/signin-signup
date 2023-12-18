@@ -51,7 +51,7 @@
 }
 
 .product:hover .add-to-cart-btn {
-    display: block;
+    display: inline;
 }
 
 .add-to-cart-btn:hover {

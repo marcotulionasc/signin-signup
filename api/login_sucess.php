@@ -49,6 +49,26 @@
         <h1>Welcome!</h1>
         <p>This is your home page</p>
         <a href="#" class="button">Learn More</a>
+
+        <h2>Products</h2>
+        <div class="product-list">
+            <?php
+            // Array of products
+            $products = [
+                ['name' => 'Product 1', 'price' => 10.99],
+                ['name' => 'Product 2', 'price' => 19.99],
+                ['name' => 'Product 3', 'price' => 14.99],
+            ];
+
+            // Loop through products and display them
+            foreach ($products as $product) {
+                echo '<div class="product">';
+                echo '<h3>' . $product['name'] . '</h3>';
+                echo '<p>Price: $' . $product['price'] . '</p>';
+                echo '</div>';
+            }
+            ?>
+        </div>
     </div>
 </body>
 </html>

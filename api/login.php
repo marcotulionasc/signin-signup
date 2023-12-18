@@ -1,27 +1,28 @@
 <?php
-include_once('connection.php');
+session_start();
+require_once 'connection.php'; // Inclua seu arquivo de conexão
 
-// Verificar se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Consultar usuário no banco de dados
-    $sql = "SELECT * FROM usuarios WHERE email='$email'";
-    $result = $conn->query($sql);
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($senha, $row['senha'])) {
-            echo "Login bem-sucedido!";
+        // Consulta SQL para verificar o login
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Login correto
+            header("Location: index.php");
         } else {
-            echo "Senha incorreta!";
+            // Login incorreto
+            echo "Login incorreto. Verifique suas credenciais.";
         }
     } else {
-        echo "Usuário não encontrado!";
+        echo "Por favor, preencha todos os campos do formulário.";
     }
-}
 
-// Fechar a conexão com o banco de dados
-$conn->close();
+    $conn->close();
+}
 ?>

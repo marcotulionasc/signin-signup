@@ -20,7 +20,8 @@ include_once('connection.php');
 
     // Fechar a conexão com o banco de dados
     $conn->close();
-} else {
+else {
     die("As variáveis de ambiente do banco de dados não estão definidas. Verifique suas configurações.");
 }
+
 ?>

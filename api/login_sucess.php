@@ -62,11 +62,19 @@
             ];
 
             // Loop through products and display them
+            $count = 0;
             foreach ($products as $product) {
+                if ($count % 4 == 0) {
+                    echo '<div class="product-row">';
+                }
                 echo '<div class="product">';
                 echo '<h3>' . $product['name'] . '</h3>';
                 echo '<p>Price: $' . $product['price'] . '</p>';
                 echo '</div>';
+                $count++;
+                if ($count % 4 == 0) {
+                    echo '</div>';
+                }
             }
             ?>
         </div>

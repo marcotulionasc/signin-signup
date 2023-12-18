@@ -61,40 +61,40 @@
     <div class="container">
         <h2>Products</h2>
         <div class="product-list">
-            <?php
-            // Array of products
-            $products = [
-                ['name' => 'Product 1', 'price' => 10.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 2', 'price' => 19.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 3', 'price' => 14.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 4', 'price' => 9.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 5', 'price' => 12.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 6', 'price' => 17.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 7', 'price' => 8.99, 'image' => 'letter-m.png'],
-                ['name' => 'Product 8', 'price' => 15.99, 'image' => 'letter-m.png'],
-            ];
+        <?php
+        // Array of products
+        $products = [
+            ['name' => 'Product 1', 'price' => 10.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 2', 'price' => 19.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 3', 'price' => 14.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 4', 'price' => 9.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 5', 'price' => 12.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 6', 'price' => 17.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 7', 'price' => 8.99, 'image' => 'letter-m.png'],
+            ['name' => 'Product 8', 'price' => 15.99, 'image' => 'letter-m.png'],
+        ];
 
-            // Loop through products and display them
-            $count = 0;
-            foreach ($products as $product) {
-                if ($count % 4 == 0) {
-                    echo '<div class="product-row">';
-                }
-                echo '<div class="product">';
-                echo '<img src="../' . $product['image'] . '" alt="' . $product['name'] . '">';
-                echo '<h3>' . $product['name'] . '</h3>';
-                echo '<p>preço: R$' . $product['price'] . '</p>';
-                echo '<button class="add-to-cart-btn" onclick="addToCart(\'' . $product['name'] . '\', ' . $product['price'] . ')">Adicionar ao Carrinho</button>';
-                echo '</div>';
-                $count++;
-                if ($count % 4 == 0) {
-                    echo '</div>';
-                }
+        // Loop through products and display them
+        $count = 0;
+        foreach ($products as $product) {
+            if ($count % 4 == 0) {
+                echo '<div class="product-row">';
             }
-            if ($count % 4 != 0) {
+            echo '<div class="product">';
+            echo '<img src="../' . $product['image'] . '" alt="' . $product['name'] . '">';
+            echo '<h3>' . $product['name'] . '</h3>';
+            echo '<p>preço: R$' . number_format($product['price'], 2, ',', '.') . '</p>';
+            echo '<button class="add-to-cart-btn" onclick="addToCart(\'' . $product['name'] . '\', ' . $product['price'] . ')">Adicionar ao Carrinho</button>';
+            echo '</div>';
+            $count++;
+            if ($count % 4 == 0) {
                 echo '</div>';
             }
-            ?>
+        }
+        if ($count % 4 != 0) {
+            echo '</div>';
+        }
+        ?>
         </div>
     </div>
     <script>

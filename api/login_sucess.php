@@ -46,10 +46,6 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome!</h1>
-        <p>This is your home page</p>
-        <a href="#" class="button">Learn More</a>
-
         <h2>Products</h2>
         <div class="product-list">
             <?php

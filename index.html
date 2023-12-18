@@ -12,31 +12,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="letter-m.png">
     <title>Entrar/Inscreva-se</title>
-
-
-    
 </head>
 
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="api/register.php" method="post">
+            <form action="api/register.php" method="post" onsubmit="return validateForm('sign-up')">
                 <h1>Criar conta</h1>
                 <input type="text" name="nome" id="nome" placeholder="Nome" required />
                 <input type="email" name="email" id="email" placeholder="E-mail" required />
                 <input type="password" name="senha" id="senha" placeholder="Senha" required />
                 <button type="submit">Increva-se!</button>
-               
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="api/login.php" method="post">
+            <form action="api/login.php" method="post" onsubmit="return validateForm('sign-in')">
                 <h1>Entrar</h1>
                 <input type="email" name="email" id="email" placeholder="E-mail" required />
                 <input type="password" name="senha" id="senha" placeholder="Senha" required />
                 <a href="#">Esqueceu sua senha?</a>
                 <button type="submit">Entrar!</button>
-                
             </form>
         </div>
         <div class="overlay-container">
@@ -55,6 +50,28 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        function validateForm(formType) {
+            var form = document.querySelector('.form-container.' + formType + '-container form');
+            var inputs = form.querySelectorAll('input');
+            var isValid = true;
+            
+            inputs.forEach(function(input) {
+                if (input.value.trim() === '') {
+                    isValid = false;
+                    input.classList.add('error');
+                } else {
+                    input.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all the fields.');
+            }
+            
+            return isValid;
+        }
+    </script>
 </body>
 
 </html>

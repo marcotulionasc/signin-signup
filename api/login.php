@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($result->num_rows > 0) {
             // Login correto
-            header("Location: index.php");
+            header("Location: login_sucess.php");
         } else {
             // Login incorreto
             echo "Login incorreto. Verifique suas credenciais.";

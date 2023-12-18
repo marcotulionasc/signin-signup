@@ -6,13 +6,14 @@ include_once('connection.php');
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+        $senha = $_POST['senha'];
 
         // Inserir usuário no banco de dados
         $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Usuário registrado com sucesso!";
+            header("Location: login_sucess.php");
         } else {
             echo "Erro ao registrar o usuário: " . $conn->error;
         }

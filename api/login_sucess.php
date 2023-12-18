@@ -1,29 +1,3 @@
-<?php
-include_once('connection.php');
-$nome = "";
-
-// Retrieve the nome field from the usuarios table
-$query = "SELECT nome FROM usuarios";
-$result = mysqli_query($conn, $query);
-
-if ($result) {
-    // Verifique se há pelo menos uma linha retornada
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch the first row from the result set
-        $row = mysqli_fetch_assoc($result);
-
-        // Assign the value of the nome field to the $nome variable
-        $nome = $row['nome'];
-    }
-} else {
-    // Adicione algum tratamento de erro, se necessário
-    echo "Erro na consulta: " . mysqli_error($conn);
-}
-
-// Close the database connection
-mysqli_close($conn);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +46,7 @@ mysqli_close($conn);
 </head>
 <body>
     <div class="container">
-        <h1>Welcome, <?php echo $nome; ?>!</h1>
+        <h1>Welcome!</h1>
         <p>This is your home page</p>
         <a href="#" class="button">Learn More</a>
     </div>

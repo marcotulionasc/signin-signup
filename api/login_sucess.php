@@ -69,12 +69,15 @@
                 }
                 echo '<div class="product">';
                 echo '<h3>' . $product['name'] . '</h3>';
-                echo '<p>Price: $' . $product['price'] . '</p>';
+                echo '<p>preço: $' . $product['price'] . '</p>';
                 echo '</div>';
                 $count++;
                 if ($count % 4 == 0) {
                     echo '</div>';
                 }
+            }
+            if ($count % 4 != 0) {
+                echo '</div>';
             }
             ?>
         </div>

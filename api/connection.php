@@ -1,24 +1,22 @@
 <?php
-function getDbConfig() {
-    return [
-        'host' => $_ENV["DB_HOST"],
-        'user' => $_ENV["DB_USER"],
-        'password' => $_ENV["DB_PASSWORD"],
-        'name' => $_ENV["DB_NAME"],
-        'port' => $_ENV["DB_PORT"],
-    ];
-}
+//session_start();
 
-function createDbConnection($config) {
-    $db = new mysqli($config['host'], $config['user'], $config['password'], $config['name'], $config['port']);
+// Se as variáveis de ambiente estiverem definidas, use-as para a conexão
+if (isset($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"], $_ENV["DB_PORT"])) {
+    $DB_HOST = $_ENV["DB_HOST"];
+    $DB_USER = $_ENV["DB_USER"];
+    $DB_PASSWORD = $_ENV["DB_PASSWORD"];
+    $DB_NAME = $_ENV["DB_NAME"];
+    $DB_PORT = $_ENV["DB_PORT"];
+
+    $db = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_NAME, $DB_PORT);
 
     if ($db->connect_error) {
-        die("Erro na conexão com o banco de dados: " . $db->connect_error);
+        die("Falha na conexão com o banco de dados: " . $db->connect_error);
     }
-
-    return $db;
+} else {
+    die("As variáveis de ambiente do banco de dados não estão definidas. Verifique suas configurações.");
 }
 
-$config = getDbConfig();
-$db = createDbConnection($config);
+// Agora você tem uma conexão ativa apenas em produção.
 ?>

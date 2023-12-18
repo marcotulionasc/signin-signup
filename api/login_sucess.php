@@ -3,60 +3,58 @@
 <head>
     <title>E-commerce</title>
     <style>
-        .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+.container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.product-row {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-.product {
-    width: 23%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-    position: relative;
-}
+        .product-row {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
 
-.product img {
-    max-width: 100%;
-    height: auto;
-}
+        .product {
+            width: 23%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-.add-to-cart-btn {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
 
-.product:hover .add-to-cart-btn {
-    display: inline;
-}
+        .product-info {
+            flex-grow: 1;
+        }
 
-.add-to-cart-btn:hover {
-    background-color: #45a049; /* Altere para a cor desejada */
-}
+        .add-to-cart-btn {
+            background: linear-gradient(to bottom, #001f3f, #003366); /* Gradiente linear azul escuro */
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .add-to-cart-btn:hover {
+            background: linear-gradient(to bottom, #001a33, #00264d); /* Gradiente linear azul escuro alterado ao passar o mouse */
+        }
     </style>
 </head>
 <body>

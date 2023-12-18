@@ -14,9 +14,33 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-row {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            width: 23%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
         }
 
         h1 {

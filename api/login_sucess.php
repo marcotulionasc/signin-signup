@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome Page</title>
+    <title>Bem vindo ao E-commerce</title>
     <style>
-        /* CSS styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -36,35 +28,12 @@
             padding: 10px;
             border: 1px solid #ddd;
             text-align: center;
+            position: relative;
         }
 
         .product img {
             max-width: 100%;
             height: auto;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        p {
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
         }
 
         .add-to-cart-btn {
@@ -84,7 +53,6 @@
         .product:hover .add-to-cart-btn {
             display: block;
         }
-
     </style>
 </head>
 <body>

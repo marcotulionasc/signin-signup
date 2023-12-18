@@ -4,12 +4,12 @@ require_once 'connection.php'; // Inclua seu arquivo de conexão
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (isset($_POST['email']) && isset($_POST['password'])) {
+    if (isset($_POST['email']) && isset($_POST['senha'])) {
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $senha = $_POST['senha'];
 
         // Consulta SQL para verificar o login
-        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

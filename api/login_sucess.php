@@ -66,6 +66,25 @@
         .button:hover {
             background-color: #0056b3;
         }
+
+        .add-to-cart-btn {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product:hover .add-to-cart-btn {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -94,7 +113,8 @@
                 echo '<div class="product">';
                 echo '<img src="../' . $product['image'] . '" alt="' . $product['name'] . '">';
                 echo '<h3>' . $product['name'] . '</h3>';
-                echo '<p>preço: $' . $product['price'] . '</p>';
+                echo '<p>preço: R$' . $product['price'] . '</p>';
+                echo '<button class="add-to-cart-btn" onclick="addToCart(\'' . $product['name'] . '\', ' . $product['price'] . ')">Adicionar ao Carrinho</button>';
                 echo '</div>';
                 $count++;
                 if ($count % 4 == 0) {
@@ -107,5 +127,13 @@
             ?>
         </div>
     </div>
+    <script>
+        function addToCart(productName, productPrice) {
+            
+            alert('Produto adicionado ao carrinho: ' + productName + ' - $' + productPrice);
+        }
+    </script>
+
+
 </body>
 </html>

@@ -54,6 +54,11 @@
                 ['name' => 'Product 1', 'price' => 10.99],
                 ['name' => 'Product 2', 'price' => 19.99],
                 ['name' => 'Product 3', 'price' => 14.99],
+                ['name' => 'Product 4', 'price' => 9.99],
+                ['name' => 'Product 5', 'price' => 12.99],
+                ['name' => 'Product 6', 'price' => 17.99],
+                ['name' => 'Product 7', 'price' => 8.99],
+                ['name' => 'Product 8', 'price' => 15.99],
             ];
 
             // Loop through products and display them

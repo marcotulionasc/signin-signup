@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bem vindo ao E-commerce</title>
+    <title>E-commerce</title>
     <style>
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-        .product-row {
-            width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+.product-row {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
 
-        .product {
-            width: 23%;
-            box-sizing: border-box;
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-            position: relative;
-        }
+.product {
+    width: 23%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    position: relative;
+}
 
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
+.product img {
+    max-width: 100%;
+    height: auto;
+}
 
-        .add-to-cart-btn {
-            display: none;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #4CAF50;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+.add-to-cart-btn {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        .product:hover .add-to-cart-btn {
-            display: block;
-        }
+.product:hover .add-to-cart-btn {
+    display: block;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049; /* Altere para a cor desejada */
+}
     </style>
 </head>
 <body>

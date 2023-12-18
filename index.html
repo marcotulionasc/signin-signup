@@ -22,9 +22,9 @@
         <div class="form-container sign-up-container">
             <form action="api/register.php" method="post">
                 <h1>Criar conta</h1>
-                <input type="text" name="nome" id="nome" placeholder="Nome" />
-                <input type="email" name="email" id="email" placeholder="E-mail" />
-                <input type="password" name="senha" id="senha" placeholder="Senha" />
+                <input type="text" name="nome" id="nome" placeholder="Nome" required />
+                <input type="email" name="email" id="email" placeholder="E-mail" required />
+                <input type="password" name="senha" id="senha" placeholder="Senha" required />
                 <button type="submit">Increva-se!</button>
                
             </form>
@@ -32,8 +32,8 @@
         <div class="form-container sign-in-container">
             <form action="api/login.php" method="post">
                 <h1>Entrar</h1>
-                <input type="email" name="email" id="email" placeholder="E-mail" />
-                <input type="password" name="senha" id="senha" placeholder="Senha" />
+                <input type="email" name="email" id="email" placeholder="E-mail" required />
+                <input type="password" name="senha" id="senha" placeholder="Senha" required />
                 <a href="#">Esqueceu sua senha?</a>
                 <button type="submit">Entrar!</button>
                 

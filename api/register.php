@@ -9,7 +9,7 @@ include_once('connection.php');
         $senha = $_POST['senha'];
 
         // Inserir usuário no banco de dados
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (2,'$nome', '$email', '$senha')";
+        $sql = "INSERT INTO usuarios (id, nome, email, senha) VALUES (2,'$nome', '$email', '$senha')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Usuário registrado com sucesso!";
